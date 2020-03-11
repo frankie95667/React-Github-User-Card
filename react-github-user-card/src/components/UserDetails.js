@@ -17,6 +17,19 @@ export default class UserDetails extends Component {
         .catch(err => console.log(err.message));
     }
 
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.user !== this.props.user){
+            axios.get(this.props.user.followers_url)
+            .then(res => {
+                console.log(res);
+                this.setState({
+                    followers: res.data
+                })
+            })
+            .catch(err => console.log(err.message));
+        }
+    }
+
     render(){
         return (
             <div>

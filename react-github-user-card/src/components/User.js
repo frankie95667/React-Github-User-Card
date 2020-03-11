@@ -34,7 +34,7 @@ const AvatarStyle = styled(Avatar)`
 
 export default class User extends React.Component {
   state = {
-    expanded: false
+    expanded: false,
   };
 
   handleExpandClick = () => {
